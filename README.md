@@ -24,7 +24,7 @@ Pillow
 Torch
 
 ⚙️ Installation (Run Locally)
-git clone https://github.com/your-username/object-detection.git
+git clone https://github.com/vrushaliithape/object-detection.git
 cd object-detection
 pip install -r requirements.txt
 streamlit run app.py
