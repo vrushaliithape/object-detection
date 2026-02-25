@@ -3,7 +3,6 @@
 A Computer Vision web application built using Streamlit and Ultralytics YOLOv8 for real-time object detection on uploaded images.
 
 Live Demo: YOLOv8 Object Detection Web App
-
 📌 Project Overview
 
 Upload an image and detect objects using a pre-trained YOLOv8 model.
