@@ -22,7 +22,7 @@ cd object-detection
 pip install -r requirements.txt
 streamlit run app.py
 
-Open in browser at: http://localhost:8501
+Open in browser at: http://localhost:8080
 
 🌐 Deployment on Streamlit Cloud
 Push project to GitHub
