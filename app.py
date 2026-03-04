@@ -1,20 +1,19 @@
 import streamlit as st
-from PIL import Image
 from ultralytics import YOLO
+from PIL import Image
 
 st.title("YOLOv8 Cloud Object Detection")
 
-@st.cache_resource
-def load_model():
-    return YOLO("best.pt")
-
-model = load_model()
+# Use official pretrained model
+model = YOLO("yolov8n.pt")
 
 uploaded_file = st.file_uploader("Upload an Image", type=["jpg", "png", "jpeg"])
 
-if uploaded_file:
+if uploaded_file is not None:
     image = Image.open(uploaded_file)
     st.image(image, caption="Uploaded Image")
 
-    results = model(image)
-    st.image(results[0].plot(), caption="Detected Image")
+    results = model.predict(source=image)
+    res_plotted = results[0].plot()
+
+    st.image(res_plotted, caption="Detected Image")
