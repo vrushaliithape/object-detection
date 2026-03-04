@@ -1,11 +1,14 @@
 import streamlit as st
-from ultralytics import YOLO
 from PIL import Image
+from ultralytics import YOLO
 
 st.title("YOLOv8 Cloud Object Detection")
 
-# Use official pretrained model
-model = YOLO("yolov8n.pt")
+@st.cache_resource
+def load_model():
+    return YOLO("best.pt")   # use your trained model
+
+model = load_model()
 
 uploaded_file = st.file_uploader("Upload an Image", type=["jpg", "png", "jpeg"])
 
